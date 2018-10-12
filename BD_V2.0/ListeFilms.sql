@@ -1,4 +1,4 @@
-INSERT INTO 'films' ('code_film', 'titre_film', 'date', 'duree', 'image') VALUES
+INSERT INTO films (code_film, titre_film, date, duree, image) VALUES
 (1,'Avatar',2009,178,'Avatar.png'),
 (2,'Titanic',1997,194,'Titanic.png'),
 (3,'Avengers:Infinity War',2018,149,'Avengers:InfinityWar.png'),
