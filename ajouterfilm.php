@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="ajouterfilm.css"/>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><i class="material-icons"><a href = "ajouterfilm.php">add</a></i></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="col s12 m2 div-add">
-        <p class="z-depth-1">z-depth-1</p>
-    </div>
-    <section>
       <?php
-        if(!isset($_POST['titre_original'])){
+        if((!isset($_REQUEST["titre"])) and (isset($_REQUEST["date"])) and (isset($_REQUEST["duree"])) and
+          (!empty($_REQUEST["titre"])) and (!empty($_REQUEST["date"])) and (!empty($_REQUEST["duree"]))){
           ?>
           <div class="form-style-8">
             <h2>Ajouter un nouveau film</h2>
