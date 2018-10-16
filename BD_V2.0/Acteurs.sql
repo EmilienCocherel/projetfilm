@@ -1,4 +1,4 @@
-INSERT INTO `acteurs` (`ref_code_film`, `ref_code_acteur`) VALUES
+INSERT INTO `acteurs` (`code_film`, `code_indiv`) VALUES
 (1,1),
 (1,2),
 (2,3),
@@ -13,7 +13,7 @@ INSERT INTO `acteurs` (`ref_code_film`, `ref_code_acteur`) VALUES
 (6,11),
 (7,12),
 (7,13),
-(8,14,),
+(8,14),
 (8,15),
 (9,6),
 (9,16),
