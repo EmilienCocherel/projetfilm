@@ -4,7 +4,7 @@
           ?>
           <div class="form-style-8">
             <h2>Ajouter un nouveau film</h2>
-            <form action='formulaireFilm.php' method="POST">
+            <form action='formulaireFilm.php' method="REQUEST">
               <input type="text" name="titre_film" placeholder="Titre">
               <input type="text" name="date" placeholder="Année de sortie">
               <input type="text" name="duree" placeholder="Durée du film">
@@ -18,7 +18,7 @@
         else{
 
           $file_db=new PDO("sqlite:donnees.sqlite");
-          $real= $file_db->query("SELECT code_indiv from individus where nom LIKE '".$_POST['realisateur']."%'");
+          $real= $file_db->query("SELECT code_indiv from individus where nom LIKE '".$_REQUEST['realisateur']."%'");
           $maxi= $file_db->query("SELECT max(code_film) from films");
           $result = $real->fetchAll();
           $max = $maxi->fetchAll();
@@ -29,15 +29,15 @@
 
           $req->execute(array(
             'code_film'=>$max['0']['0']+1,
-          	'titre_film' => $_POST['titre_film'],
-          	'date' => $_POST['date'],
-          	'duree' => $_POST['duree'],
+          	'titre_film' => $_REQUEST['titre_film'],
+          	'date' => $_REQUEST['date'],
+          	'duree' => $_REQUEST['duree'],
           	));
             echo "Le film ";
-            echo $_POST['titre_film'];
+            echo $_REQUEST['titre_film'];
             echo ' a bien été ajouté !';
             ?>
-            <form action='accueil.html' ,method="POST">
+            <form action='accueil.html' ,method="REQUEST">
               <input type="submit" name="ok" value="ok">
             </form>
           <?php
@@ -45,7 +45,7 @@
           else{
             echo"ajouter le réalisateur";
             ?>
-            <form action='formulaireReal.php' ,method="POST">
+            <form action='formulaireReal.php' ,method="REQUEST">
               <input type="submit" name="AjoutReal" value="Ajouter le réalisateur">
             </form>
             <?php
