@@ -25,10 +25,10 @@
     }
     else{
 
-    //$file_db=new PDO("sqlite:donnees.sqlite");
-    require_once('connect_mysql.php');
+     require_once('connect_mysql.php');
     require_once('methode.php');
-    $req = $file_db->prepare("DELETE FROM films WHERE titre_film LIKE '".$_REQUEST['titre_film']."'");
+    $connexion=connect_bd();
+    $req = $connexion->prepare("DELETE FROM films WHERE titre_film = '".$_REQUEST['titre_film']."'");
 
     $req->execute();
 

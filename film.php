@@ -18,7 +18,6 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><i class="material-icons"><a href = "ajouterfilm.html">add</a></i></li>
           <li><a href = "accueil.php">Home</a></li>
-
         </ul>
       </div>
     </nav>
