@@ -1,6 +1,6 @@
 <?php
 function connect_bd(){
-	$dsn="mysql:dbname="."dbjmartin".";host="."servinfo-mariadb";
+	$dsn="mysql:dbname="."DBjmartin".";host="."servinfo-mariadb";
 		try{
 		$connexion=new PDO($dsn,"jmartin","jmartin");
 		}
