@@ -6,8 +6,8 @@
       <h2>Ajouter un nouveau film</h2>
       <form action='formulaireFilm.php' method="REQUEST">
         <input type="text" name="titre_film" placeholder="Titre">
-        <input type="text" name="date" placeholder="Année de sortie">
-        <input type="text" name="duree" placeholder="Durée du film">
+        <input type="number" name="date" placeholder="Année de sortie">
+        <input type="number" name="duree" placeholder="Durée du film">
 
         <input type="submit" name="ajouterfilm" value="Ajouter le film">
       </form>
