@@ -11,11 +11,11 @@
 <body>
 <section>
     <?php
-      if(!isset ($_POST['titre_film'])){
+      if(!isset ($_REQUEST['titre_film'])){
     ?>
     <div class="form-style-8">
       <h2>Supprimer un film</h2>
-      <form action='supprimerfilm.php' method="POST">
+      <form action='supprimerfilm.php' method="REQUEST">
         <input type="text" name="titre_film" placeholder="Entrez le titre du film">
         <input type="submit" name="ajouterfilm" value="Supprimer">
       </form>
@@ -26,13 +26,13 @@
     else{
 
     $file_db=new PDO("sqlite:donnees.sqlite");
-    $req = $file_db->prepare("DELETE FROM films WHERE titre_film LIKE '".$_POST['titre_film']."'");
+    $req = $file_db->prepare("DELETE FROM films WHERE titre_film LIKE '".$_REQUEST['titre_film']."'");
 
     $req->execute();
 
       echo 'Le film a bien été supprimé';
       ?>
-      <form action='accueil.html' ,method="POST">
+      <form action='accueil.html' ,method="REQUEST">
         <input type="submit" name="ok" value="ok">
       </form>
       <?php
