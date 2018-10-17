@@ -37,7 +37,9 @@
       print_r($film["duree"]);
       print("min");
       echo "<br>";
+      echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
       echo "<input value='Supprimer' type='submit'/>";
+      echo "</form>";
 
     }
 
