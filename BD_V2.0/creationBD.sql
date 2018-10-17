@@ -24,4 +24,3 @@ CREATE TABLE IF NOT EXISTS acteurs (
   constraint fk_film foreign key(code_film) references films(code_film),
   constraint fk_acteurs foreign key(code_indiv) references individus(code_indiv)
 );
-source 
