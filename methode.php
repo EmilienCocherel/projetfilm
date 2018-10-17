@@ -13,4 +13,10 @@ function afficheFilm($titre_film){
        }
   return $list;
 }
+
+function IdMax(){
+  $connexion=connect_bd();
+  $sql="select max(code_film) from films;";
+  return $connexion->query($sql);
+}
 ?>

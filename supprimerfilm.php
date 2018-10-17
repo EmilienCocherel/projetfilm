@@ -25,7 +25,7 @@
     }
     else{
 
-    $file_db=new PDO("mysql:creationBD.sql");
+    $file_db=new PDO("sqlite:donnees.sqlite");
     $req = $file_db->prepare("DELETE FROM films WHERE titre_film LIKE '".$_REQUEST['titre_film']."'");
 
     $req->execute();
