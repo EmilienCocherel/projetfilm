@@ -37,12 +37,12 @@
       $film = afficheFilm($_GET["titre_film"]);
       print_r($film);
     }
-    else{
-      $connexion=connect_bd();
-      /*print("Le film");
-      print(afficheFilm($_GET["titre_film"]));
-      print_r("n'existe pas.");*/
+    echo "<table>";
+    echo "<tr>"."<th>"."Titre Film"."</th>"."<th>"."Année de sortie"."</th>"."<th>"."Durée"."</th>"."</tr>";
+    foreach (afficheTousFilms("select * from films") as $f){
+      echo "<tr>"."<td>".$f['titre_film']."</td>"."<td>".$f['date']."</td>"."<td>".$f['duree']."</td>"."</tr>";
     }
+    echo "</table>";
     ?>
   </form>
   </body>
