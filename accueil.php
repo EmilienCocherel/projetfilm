@@ -25,5 +25,13 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <?php
+    require_once('connect_mysql.php');
+    require_once('test.php');
+
+    $connexion=connect_bd();
+    $film = afficheFilm('Titanic');
+    print_r($film);
+    ?>
   </body>
 </html>
