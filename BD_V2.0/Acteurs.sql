@@ -1,3 +1,6 @@
+/* Insertion des ID des tables films et individus dans la table acteurs*/
+
+
 INSERT INTO `acteurs` (`code_film`, `code_indiv`) VALUES
 (1,1),
 (1,2),
