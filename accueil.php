@@ -32,7 +32,6 @@
     require_once('methode.php');
     if ((isset($_GET["titre_film"])) and (!empty($_GET["titre_film"]))){
       $connexion=connect_bd();
-      $req = $connexion->prepare("select code_film from films where" .$_GET["titre_film"]. "='Iron Man 2'");
       print("Le titre du film est:");
       $film = afficheFilm($_GET["titre_film"]);
       print_r($film);

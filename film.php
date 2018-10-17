@@ -27,9 +27,7 @@
     <?php
     require_once('connect_mysql.php');
     require_once('methode.php');
-    $req = $connexion->prepare("select code_film from films where" .$_GET["titre_film"]. "='titre_film'");
     if ((isset($_GET["titre_film"])) and (!empty($_GET["titre_film"]))){
-      if(!$req){
       $connexion=connect_bd();
       print("Le titre du film est: ");
       $film = afficheFilm($_GET["titre_film"]);
@@ -42,14 +40,6 @@
       echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
       echo "<input value='Supprimer' type='submit'/>";
       echo "</form>";
-      }
-    else{
-      echo "Inexistant";
-      echo "<br>";
-      echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
-      echo "<input value='Supprimer' type='submit'/>";
-      echo "</form>";
-    }
 
     }
 

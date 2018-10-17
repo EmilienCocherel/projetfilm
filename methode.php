@@ -20,15 +20,15 @@ function afficheTousFilms($sql){
   return $res;
 }
 
-function IdMax(){
-  $connexion=connect_bd();
-  $sql="select max(code_film) from films;";
-  return $connexion->query($sql);
-}
+function prochainId(){
+          $connexion=connect_bd();
+          foreach ($connexion->query("SELECT max(code_film) maxi FROM films") as $id){}
+            return ((int) $id["maxi"])+1;
+        }
 
 function addFilm($titre_film,$date,$duree){
   $connexion=connect_bd();
-  $code_film=IdMax() + 1;
+  $code_film=prochainId();
   $sql="insert into films values(:code_film, :titre_film, :date, :duree)";
 
   $stmt=$connexion->prepare($sql);
