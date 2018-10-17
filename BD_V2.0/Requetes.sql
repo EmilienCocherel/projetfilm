@@ -14,4 +14,7 @@ select count(code_indiv) from individus;
 
 
 /* Affiche tous les films de la base ainsi que toutes leurs infos sauf l'ID*/
-select titre_film,date,duree,image from films;
+select titre_film,date,duree from films;
+
+/*Affiche juste l'image*/
+select image from films where code_film=1;
