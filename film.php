@@ -21,6 +21,7 @@
         </ul>
       </div>
     </nav>
+    <center>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
@@ -36,10 +37,20 @@
         foreach (afficheFilm($_GET["titre_film"]) as $film) {
             echo "<img src='$film[image]' height=250px><br>";
             echo $film['titre_film']." dure : ".$film["duree"]."min<br>";
-            echo $film['titre_film']." est sortie en ".$film['date'];
+            echo $film['titre_film']." est sortie en ".$film['date']."<br>";
+            echo "<table>";
+            echo "<tr><h3>Acteurs</h3></tr>";
+            echo "<tr>"."<th>"."Nom"."</th>"."<th>"."Prénom"."</th>"."<th>"."Nationalité"."</th>"."<th>"."Année de naissance"."</th>"."</tr>";
+            foreach (listActeur($film['titre_film']) as $acteur){
+              echo "<tr>"."<td>".$acteur['nom']."</td>"."<td>".$acteur['prenom']."</td>"."<td>".$acteur['nationalite']."</td>"."<td>".$acteur['date_naiss']."</td>"."<tr>";
+            }
+            echo "</table>";
         }
       }
     }
+
+
     ?>
+  </center>
   </body>
 </html>

@@ -38,21 +38,18 @@
       <?php
     }
     else{
-     require_once('connect_mysql.php');
+    require_once('connect_mysql.php');
     require_once('methode.php');
     $connexion=connect_bd();
-    $req = $connexion->prepare("DELETE FROM films WHERE titre_film = '".$_REQUEST['titre_film']."'");
-
-    $req->execute();
-
-      echo 'Le film a bien été supprimé';
-      ?>
-      <form action='accueil.php' ,method="REQUEST">
-        <input type="submit" name="ok" value="ok">
-      </form>
-      <?php
+    deleteFilm($_REQUEST['titre_film']);
+    echo '<h1>Le film a bien été supprimé<h1>';
+    ?>
+    <form action='accueil.php' ,method="REQUEST">
+      <input type="submit" name="ok" value="ok">
+    </form>
+    <?php
     }
-      ?>
+    ?>
     </section>
     </center>
 </body>
