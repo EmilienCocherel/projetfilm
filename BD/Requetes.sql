@@ -18,6 +18,3 @@ select titre_film,date,duree from films;
 
 /*Affiche juste l'image*/
 select image from films where code_film=1;
-
-/*Affiche le plus grand id de la table films*/
-select max(code_film) from films;

@@ -1,6 +1,3 @@
-/* Insertion de quelques données dans la table des Individus*/
-
-
 INSERT INTO individus (code_indiv, nom, prenom,nationalite, date_naiss ) VALUES
 (1,'Worthington','Sam','Australien',1976),
 (2,'Saldana','Zoe','Américaine',1978),

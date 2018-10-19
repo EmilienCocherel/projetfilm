@@ -25,7 +25,7 @@
     }
     else{
 
-    require_once('connect_mysql.php');
+     require_once('connect_mysql.php');
     require_once('methode.php');
     $connexion=connect_bd();
     $req = $connexion->prepare("DELETE FROM films WHERE titre_film = '".$_REQUEST['titre_film']."'");

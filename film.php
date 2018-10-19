@@ -15,7 +15,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><i class="material-icons"><a href = "ajouterfilm.html">add</a></i></li>
+          <li><a href = "ajouterfilm.html">Ajouter un film</a></i></li>
           <li><a href = "accueil.php">Home</a></li>
         </ul>
       </div>
@@ -30,7 +30,7 @@
     if ((isset($_GET["titre_film"])) and (!empty($_GET["titre_film"]))){
       $connexion=connect_bd();
       if (afficheFilm($_GET["titre_film"])->rowCount() == 0){
-        echo "<h1>Désolé le film rechercher n'est pas dans la base de donnée</h1>";
+        echo "<h1>Désolé, le film recherché n'est pas dans la base de donnée.</h1>";
       }
       else{
         foreach (afficheFilm($_GET["titre_film"]) as $film) {
