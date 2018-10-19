@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS films (
   titre_film varchar(50) primary key,
   date int(11) DEFAULT NULL,
   duree int(11) DEFAULT NULL,
-  image varchar(50) DEFAULT NULL
+  image varchar(255) DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS acteur (

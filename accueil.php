@@ -17,16 +17,20 @@
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href = "ajouterfilm.html">Ajouter un film</a></i></li>
+          <li><a href = "supprimerfilm.php">Supprimer un film</a></i></li>
           <li><a href = "accueil.php">Home</a></li>
         </ul>
       </div>
     </nav>
+    <center>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <form name="f1" method="GET" action="film.php">
-    <input type = "text" name = "titre_film" placeholder = "Titre Film"></input>
+    <div class=div_search_film>
+    <input type="text" name = "titre_film" placeholder = "Titre Film"></input>
     <input value="Rechercher" type="submit"/>
+  </div>
     <?php
     require_once('connect_mysql.php');
     require_once('methode.php');
@@ -39,5 +43,6 @@
     echo "</table>";
     ?>
   </form>
+  </center>
   </body>
 </html>

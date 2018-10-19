@@ -16,6 +16,7 @@
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href = "ajouterfilm.html">Ajouter un film</a></i></li>
+          <li><a href = "supprimerfilm.php">Supprimer un film</a></i></li>
           <li><a href = "accueil.php">Home</a></li>
         </ul>
       </div>
@@ -34,17 +35,11 @@
       }
       else{
         foreach (afficheFilm($_GET["titre_film"]) as $film) {
-            echo "<img src='http://localhost/~jmartin/projfil/BD/ImagesFilms/$film[image]' height=250px>";
+            echo "<img src='$film[image]' height=250px><br>";
+            echo $film['titre_film']." dure : ".$film["duree"]."min<br>";
+            echo $film['titre_film']." est sortie en ".$film['date'];
         }
-        echo "<br>";
-        print("La durée du film est: ");
-        print_r($film["duree"]);
-        print("min");
-        echo "<br>";
-        echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
-        echo "<input value='Supprimer' type='submit'/>";
-        echo "</form>";
-    }
+      }
     }
 
 

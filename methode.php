@@ -13,22 +13,15 @@ function afficheTous($sql){
   return $res;
 }
 
-function prochainId(){
-          $connexion=connect_bd();
-          foreach ($connexion->query("SELECT max(code_film) maxi FROM films") as $id){}
-            return ((int) $id["maxi"])+1;
-        }
-
-function addFilm($titre_film,$date,$duree){
+function addFilm($titre_film,$date,$duree,$image){
   $connexion=connect_bd();
-  $code_film=prochainId();
-  $sql="insert into films values(:code_film, :titre_film, :date, :duree)";
+  $sql="insert into films values(:titre_film, :date, :duree, :image)";
 
   $stmt=$connexion->prepare($sql);
-  $stmt->bindParam(':code_film', $code_film);
   $stmt->bindParam(':titre_film', $titre_film);
   $stmt->bindParam(':date', $date);
   $stmt->bindParam(':duree', $duree);
+  $stmt->bindParam(':image', $image);
   $stmt->execute();
 }
 ?>
