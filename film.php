@@ -10,7 +10,6 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-
   <body>
     <nav>
       <div class="nav-wrapper">
@@ -21,6 +20,7 @@
         </ul>
       </div>
     </nav>
+    <center>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
@@ -29,21 +29,26 @@
     require_once('methode.php');
     if ((isset($_GET["titre_film"])) and (!empty($_GET["titre_film"]))){
       $connexion=connect_bd();
-      print("Le titre du film est: ");
-      $film = afficheFilm($_GET["titre_film"]);
-      print_r($film["titre_film"]);
-      echo "<br>";
-      print("La durée du film est: ");
-      print_r($film["duree"]);
-      print("min");
-      echo "<br>";
-      echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
-      echo "<input value='Supprimer' type='submit'/>";
-      echo "</form>";
-
+      if (afficheFilm($_GET["titre_film"])->rowCount() == 0){
+        echo "<h1>Désolé le film rechercher n'est pas dans la base de donnée</h1>";
+      }
+      else{
+        foreach (afficheFilm($_GET["titre_film"]) as $film) {
+            echo "<img src='http://localhost/~jmartin/projfil/BD/ImagesFilms/$film[image]' height=250px>";
+        }
+        echo "<br>";
+        print("La durée du film est: ");
+        print_r($film["duree"]);
+        print("min");
+        echo "<br>";
+        echo "<form action='supprimerfilm.php' ,method='REQUEST'>";
+        echo "<input value='Supprimer' type='submit'/>";
+        echo "</form>";
+    }
     }
 
 
     ?>
+  </center>
   </body>
 </html>
