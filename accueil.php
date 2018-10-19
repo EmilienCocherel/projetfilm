@@ -16,6 +16,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><i class="material-icons"><a href = "ajouterfilm.html">add</a></i></li>
           <li><a href = "accueil.php">Home</a></li>
         </ul>
       </div>
@@ -29,12 +30,13 @@
     <?php
     require_once('connect_mysql.php');
     require_once('methode.php');
-    if ((isset($_GET["titre_film"])) and (!empty($_GET["titre_film"]))){
-      $connexion=connect_bd();
-      print("Le titre du film est:");
-      $film = afficheFilm($_GET["titre_film"]);
-      print_r($film);
+
+    echo "<table>";
+    echo "<tr>"."<th>"."Titre Film"."</th>"."<th>"."Année de sortie"."</th>"."<th>"."Durée"."</th>"."</tr>";
+    foreach (afficheTous("select * from films") as $f){
+      echo "<tr>"."<td>"."<a href='film.php?titre_film=$f[titre_film]'>".$f['titre_film']."</a>"."</td>"."<td>".$f['date']."</td>"."<td>".$f['duree']."min"."</td>"."</tr>";
     }
+    echo "</table>";
     ?>
   </form>
   </body>

@@ -16,24 +16,26 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href = "accueil.html">Home</a></li>
+        <li><i class="material-icons"><a href = "ajouterfilm.html">add</a></i></li>
+        <li><a href = "accueil.php">Home</a></li>
       </ul>
     </div>
   </nav>
   <div class = "div_add_film">
+    <form name = "f1" method = "GET" action = "ajouterfilm2.php">
     <ul>
-        <li><input type = "text" name = "titre" placeholder = "Titre"></li>
-        <li><input type = "text" name = "date" placeholder = "Date"></li>
-        <li><input type = "text" name = "duree" placeholder = "Durée du film"></li>
+        <li><input type = "text" name = "titre" placeholder = "Titre" required></li>
+        <li><input type = "text" name = "date" placeholder = "Date" required></li>
+        <li><input type = "text" name = "duree" placeholder = "Durée du film" required></li>
     </ul>
-    <form name = "f1" method = "REQUEST" action = "ajouterfilm.php">
       <input value = "Ajouter" type = "submit"/>
     <br>
     <input value = "Annuler" type = "reset"/>
+    </form>
   </div>
 
 
-    
+
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

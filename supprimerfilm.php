@@ -25,14 +25,16 @@
     }
     else{
 
-    $file_db=new PDO("sqlite:donnees.sqlite");
-    $req = $file_db->prepare("DELETE FROM films WHERE titre_film LIKE '".$_REQUEST['titre_film']."'");
+     require_once('connect_mysql.php');
+    require_once('methode.php');
+    $connexion=connect_bd();
+    $req = $connexion->prepare("DELETE FROM films WHERE titre_film = '".$_REQUEST['titre_film']."'");
 
     $req->execute();
 
       echo 'Le film a bien été supprimé';
       ?>
-      <form action='accueil.html' ,method="REQUEST">
+      <form action='accueil.php' ,method="REQUEST">
         <input type="submit" name="ok" value="ok">
       </form>
       <?php
