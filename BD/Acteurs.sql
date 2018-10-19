@@ -1,4 +1,4 @@
-INSERT INTO `acteurs` (`titre_film`, `code_indiv`) VALUES
+INSERT INTO `jouer` (`titre_film`, `code_indiv`) VALUES
 ('Avatar',1),
 ('Avatar',2),
 ('Titanic',3),
